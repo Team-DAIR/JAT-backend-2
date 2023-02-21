@@ -1,18 +1,15 @@
 {% extends 'base.html' %}
-
 {% block content %}
-{# <h1>Update Thing</h1>#}
-{# <form method="POST">#}
-  {##}
-  {# {{ form.as_p }}#}
-  {# <input type="submit" value="SAVE">#}
-  {# </form>#}
 
 <div
   class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
   <form class="space-y-6" method="POST">
     {% csrf_token %}
     <h5 class="text-xl font-medium text-gray-900 dark:text-white">Update a Job</h5>
+
+    <p class="text-md font-medium text-gray-900 dark:text-white">Date Applied: {{ job.date_applied }}</p>
+
+    <p class="text-md font-medium text-gray-900 dark:text-white">Method of Application: {{ job.method_of_applications }}</p>
 
     <div>
       <label for="id_job_title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Job Title</label>
@@ -29,42 +26,10 @@
     </div>
 
     <div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.min.js"></script>
-
-      <div class="relative max-w-sm">
-        <label for="id_date_applied" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Applied</label>
-
-        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-          <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
-            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </div>
-        <input datepicker datepicker-autohide name="date_applied" id="id_date_applied" type="text"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-      </div>
-    </div>
-
-    <div>
       <label for="id_notes" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Notes: </label>
       <input type="text" name="notes" id="id_notes"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
         required value="{{ job.notes }}">
-    </div>
-
-    <div>
-      <label for="method_of_applications" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">How did you
-        apply?</label>
-      <select id="method_of_applications"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required value="{{ job.method_of_applications }}">
-        <option selected>{{ job.method_of_applications }}</option>
-        <option value="linkedin">LinkedIn</option>
-        <option value="indeed">Indeed</option>
-        <option value="company_website">Company Website</option>
-        <option value="other">Other</option>
-      </select>
     </div>
 
     <div>
