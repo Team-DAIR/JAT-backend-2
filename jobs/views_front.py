@@ -24,7 +24,7 @@ class JobUpdateView(LoginRequiredMixin, UpdateView):
 class JobCreateView(LoginRequiredMixin, CreateView):
     template_name = "jobs/job_create.html"
     model = Job
-    fields = ["name", "rating", "reviewer"] # "__all__" for all of them
+    fields = "__all__" # "__all__" for all of them
 
 
 class JobDeleteView(LoginRequiredMixin, DeleteView):
