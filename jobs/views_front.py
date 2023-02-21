@@ -18,14 +18,21 @@ class JobDetailView(LoginRequiredMixin, DetailView):
 class JobUpdateView(LoginRequiredMixin, UpdateView):
     template_name = "jobs/job_update.html"
     model = Job
-    fields = "__all__"
+    fields = ["job_title", "notes"]
 
 
 class JobCreateView(LoginRequiredMixin, CreateView):
     template_name = "jobs/job_create.html"
     model = Job
-    fields = "__all__" # "__all__" for all of them
+    fields = ["company","job_title","date_applied", "notes", "method_of_applications","referrals"] # "__all__" for all of them
 
+
+"""company = models.TextField(blank=True)
+    job_title = models.TextField(blank=True)
+    date_applied = models.DateField()
+    notes = models.TextField(blank=True)
+    method_of_applications = models.TextField(blank=True)
+    referrals = models.TextField(blank=True)"""
 
 class JobDeleteView(LoginRequiredMixin, DeleteView):
     template_name = "jobs/job_delete.html"
