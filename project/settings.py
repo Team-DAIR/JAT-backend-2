@@ -62,7 +62,6 @@ INSTALLED_APPS = [
     # local
     "accounts",
     "jobs",
-    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -183,10 +182,3 @@ STATICFILES_DIRS = [
 # AUTH
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
-
-# Compressor
-COMPRESS_ROOT = BASE_DIR / 'static'
-
-COMPRESS_ENABLED = True
-
-STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
