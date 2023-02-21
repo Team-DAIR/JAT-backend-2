@@ -6,8 +6,11 @@
 
   <div class="flex">
 
-    <h5 class=" flex-auto mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ job.job_title }}</h5>
-
+    <h5 class=" flex-auto mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ job.job_title }} at {{ job.company }}</h5>
+    <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Date Applied: {{ job.date_applied }}</p>
+    <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Notes: {{ job.notes }}</p>
+    <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Method of Application: {{ job.method_of_applications }}</p>
+    <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Referral: {{ job.referral }}</p>
 
     <a href="{% url 'job_update' job.pk %}">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-blue-600">

@@ -1,5 +1,5 @@
-import Datepicker from 'flowbite-datepicker/Datepicker';
-import { Dropdown } from 'flowbite';
+<!-- import Datepicker from 'flowbite-datepicker/Datepicker';
+import { Dropdown } from 'flowbite'; -->
 
 {% extends 'base.html' %}
 
@@ -32,7 +32,7 @@ import { Dropdown } from 'flowbite';
       <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.min.js"></script>
 
       <div class="relative max-w-sm">
-        <label for="id_date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Applied</label>
+        <label for="id_date_applied" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Applied</label>
 
         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
@@ -42,9 +42,8 @@ import { Dropdown } from 'flowbite';
               clip-rule="evenodd"></path>
           </svg>
         </div>
-        <input datepicker datepicker-autohide type="text"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Select date">
+        <input datepicker datepicker-autohide name="date_applied" id="id_date_applied" type="text"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
       </div>
 
     </div>
@@ -53,16 +52,16 @@ import { Dropdown } from 'flowbite';
       <label for="id_notes" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Notes: </label>
       <input type="text" name="notes" id="id_notes"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-        placeholder="e.g. optional">
+        placeholder="Optional">
 
     </div>
 
 
 
 
-    <label for="method_of_application" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">How did you
+    <label for="id_method_of_applications" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">How did you
       apply?</label>
-    <select id="method_of_application"
+    <select name="method_of_applications" id="id_method_of_applications"
       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
       <option selected>Choose a method</option>
       <option value="linkedin">LinkedIn</option>
@@ -75,7 +74,7 @@ import { Dropdown } from 'flowbite';
       <label for="id_referral" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Referral: </label>
       <input type="text" name="referral" id="id_referral"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-        placeholder="e.g. optional">
+        placeholder="Optional">
 
     </div>
 
