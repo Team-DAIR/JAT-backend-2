@@ -14,14 +14,26 @@
 
     <div>
       <h5 class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Status</h5>
-      {% if true %}
-
-      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ job.first }}</p>
-      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ job.second }}</p>
-      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ job.third }}</p>
-      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ job.rejected }}</p>
-      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ job.offer }}</p>
+      {% if job.first %}
+      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">&#x2713; First Interview</p>
       {% endif %}
+
+      {% if job.second %}
+      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">&#x2713; Second Interview</p>
+      {% endif %}
+
+      {% if job.third %}
+      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">&#x2713; Third Interview</p>
+      {% endif %}
+
+      {% if job.rejected %}
+      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">&#x2713; Rejected </p>
+      {% endif %}
+
+      {% if job.offer %}
+      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">&#x2713; Offered</p>
+      {% endif %}
+
     </div>
 
     <a href="{% url 'job_update' job.pk %}">

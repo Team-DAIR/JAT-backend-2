@@ -30,13 +30,20 @@
 
     <div>
       <h5 class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Status</h5>
-      {% for job in job %}
-      <p>{{ job.first }}</p>
-      <p>{{ job.second }}</p>
-      <p>{{ job.third }}</p>
-      <p>{{ job.rejected }}</p>
-      <p>{{ job.offer }}</p>
-      {% endfor %}
+      <label for="id_first" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Interview</label>
+      <input type="checkbox" name="first" id="id_first" {% if job.first %} checked {% else %} '' {% endif %} >
+
+      <label for="id_second" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Second Interview</label>
+      <input type="checkbox" name="second" id="id_second" {% if job.second %} checked {% else %} '' {% endif %} >
+
+      <label for="id_third" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Third Interview</label>
+      <input type="checkbox" name="third" id="id_third" {% if job.third %} checked {% else %} '' {% endif %} >
+
+      <label for="id_offer" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Offer Received</label>
+      <input type="checkbox" name="offer" id="id_offer" {% if job.offer %} checked {% else %} '' {% endif %} >
+
+      <label for="id_rejected" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rejected</label>
+      <input type="checkbox" name="rejected" id="id_rejected" {% if job.rejected %} checked {% else %} '' {% endif %} >
     </div>
 
     <button type="submit"
