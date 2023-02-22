@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
 
-status_choices = [
+STATUS_CHOICES = [
     ('applied', 'Applied'),
     ('pending', 'Pending'),
     ('rejected', 'Rejected')
@@ -19,6 +19,11 @@ class Job(models.Model):
     notes = models.TextField(blank=True)
     method_of_applications = models.TextField(blank=True)
     referrals = models.TextField(blank=True)
+    first = models.BooleanField(default=False)
+    second = models.BooleanField(default=False)
+    third = models.BooleanField(default=False)
+    rejected = models.BooleanField(default=False)
+    offer = models.BooleanField(default=False)
 
     def __str__(self):
         return self.job_title

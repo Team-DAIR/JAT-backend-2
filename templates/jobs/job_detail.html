@@ -12,6 +12,18 @@
     <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Method of Application: {{ job.method_of_applications }}</p>
     <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Referral: {{ job.referrals }}</p>
 
+    <div>
+      <h5 class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Status</h5>
+      {% if true %}
+
+      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ job.first }}</p>
+      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ job.second }}</p>
+      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ job.third }}</p>
+      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ job.rejected }}</p>
+      <p class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ job.offer }}</p>
+      {% endif %}
+    </div>
+
     <a href="{% url 'job_update' job.pk %}">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-blue-600">
         <path
@@ -31,8 +43,6 @@
     </a>
 
   </div>
-
-
 </div>
 
 
