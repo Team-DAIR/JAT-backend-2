@@ -18,7 +18,7 @@ class JobDetailView(LoginRequiredMixin, DetailView):
 class JobUpdateView(LoginRequiredMixin, UpdateView):
     template_name = "jobs/job_update.html"
     model = Job
-    fields = ["company", "job_title", "notes", "referrals"]
+    fields = ["notes", "referrals"]
     context_object_name = "job"
 
 

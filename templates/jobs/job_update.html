@@ -7,23 +7,13 @@
     {% csrf_token %}
     <h5 class="text-xl font-medium text-gray-900 dark:text-white">Update a Job</h5>
 
-    <p class="text-md font-medium text-gray-900 dark:text-white">Date Applied: {{ job.date_applied }}</p>
 
-    <p class="text-md font-medium text-gray-900 dark:text-white">Method of Application: {{ job.method_of_applications }}</p>
+    <p class="text-md font-medium text-gray-900 dark:text-blue-300">Company: {{ job.company }}</p>
+    <p class="text-md font-medium text-gray-900 dark:text-blue-300">Job Title: {{ job.job_title }}</p>
+    <p class="text-md font-medium text-gray-900 dark:text-blue-300">Date Applied: {{ job.date_applied }}</p>
 
-    <div>
-      <label for="id_job_title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Job Title</label>
-      <input type="text" name="job_title" id="id_job_title"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-        required value="{{ job.job_title }}">
-    </div>
+    <p class="text-md font-medium text-gray-900 dark:text-blue-300">Method of Application: {{ job.method_of_applications }}</p>
 
-    <div>
-      <label for="id_company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Company Name</label>
-      <input type="text" name="company" id="id_company"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-        required value="{{ job.company }}">
-    </div>
 
     <div>
       <label for="id_notes" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Notes: </label>
@@ -36,6 +26,17 @@
       <label for="id_referrals" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Referral: </label>
       <input type="text" name="referrals" id="id_referrals"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required value="{{ job.referrals }}">
+    </div>
+
+    <div>
+      <h5 class=" flex-auto mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Status</h5>
+      {% for job in job %}
+      <p>{{ job.first }}</p>
+      <p>{{ job.second }}</p>
+      <p>{{ job.third }}</p>
+      <p>{{ job.rejected }}</p>
+      <p>{{ job.offer }}</p>
+      {% endfor %}
     </div>
 
     <button type="submit"
